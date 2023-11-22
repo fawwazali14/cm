@@ -1,0 +1,32 @@
+.head{
+    font-family: "Montserrat, sans-serif";
+    font-size: 64px; /* Adjust the size as needed */
+    text-align: center;
+    color: #102d43;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  }
+  
+  .join1,
+  .join2 {
+    background-color: #131b21;
+    height: 40px;
+    color: #ffffff;
+    padding: 10px 30px;
+    margin: 0 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+  
+  .join1:hover,
+  .join2:hover {
+    background-color: #2a5392;
+  }
+  

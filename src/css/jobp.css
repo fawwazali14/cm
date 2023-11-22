@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500;600&display=swap");
+@import 'react-datepicker/dist/react-datepicker.css';
+
+.App {
+  text-align: center;
+}
+.head{
+  font-family: "Montserrat, sans-serif";
+  font-size: 64px; /* Adjust the size as needed */
+  text-align: center;
+  color: #102d43;
+}
+
+
+h1, p {
+  margin: 1em auto;
+  text-align: center;
+}
+
+fieldset {
+  /* border: none; */
+  padding: 1rem 0;
+  border-bottom: 3px solid #282c34;
+  /* border-left: 3px solid #282c34; */
+  border-right: 3px solid #282c34;
+  margin: 0% 15%;
+  margin-top: 1em;
+  text-align: center;
+}
+
+input[type="submit"] {
+  display: block;
+  width: 40%;
+  margin: 1em auto;
+  height: 2em;
+  font-size: 1.1rem;
+  border-color: white;
+  margin-bottom: 5em;
+  min-width: 150px;
+}
+
+.row {
+  text-align: left;
+}
+
+.row textarea {
+  width: 400px;
+  height: 150px;
+  max-width: 450px;
+  max-height: 300px;
+}
+
+.firstName, .lastName, .dob, .email, .ssn, .jobTitle, .description, .duration, .payPerHr, .location {
+  text-align: center;
+  border-style: dotted;
+  width: 400px;
+  height: 30px;
+  max-width: 450px;
+  max-height: 40px;
+  border-radius: 3%;
+  font-size: 16px;
+}
+.lastName{
+  margin-left: 12px;
+}
+
+.export-btn {
+  width: 450px;
+  justify-content: center;
+  padding: 3px;
+  font-size: 16px;
+  margin: auto;
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  border-radius: 4px;
+  background: #151a1e;
+  padding: 10px 22px;
+  color: #ffffff;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.export-btn:hover {
+  background: #2a5392;
+}

@@ -1,0 +1,67 @@
+.Card {
+    
+    font-family: "Raleway", sans-serif;
+    align-items: center;
+  }
+  
+  .jobimage {
+   
+    width: 40%;
+    border-radius: 12px;
+    height: 184px;
+    object-fit: cover;
+    
+  }
+  
+  #container {
+    
+    margin: auto;
+    margin-top: 20vh;
+    align-items: center;
+  }
+  
+  .card {
+    display: flex;
+    background-color: white;
+    border: 1px solid #bacdd8;
+    padding: 8px;
+    border-radius: 12px;
+    width: 700px; /* Set the width to 700px */
+    margin: auto; /* Center align using auto margins */
+    align-items: center;
+  }
+  
+  .name {
+    font-size: 24px;
+    font-weight: 600;
+  
+    margin-top: 16px;
+  }
+  
+  p {
+    font-size: 14px;
+    color: #7f8c9b;
+    line-height: 150%;
+  }
+  
+  button {
+    border: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    color: #0077ff;
+    background-color: #e0efff;
+    margin: 0 auto;
+    display: block;
+    cursor: pointer;
+  }
+  
+  .card__details {
+    padding: 16px 8px 8px 8px;
+  }
+  
+  button:focus,
+  button:hover {
+    background-color: #0077ff;
+    color: #e0efff;
+  }
