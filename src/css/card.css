@@ -2,6 +2,7 @@
     
     font-family: "Raleway", sans-serif;
     align-items: center;
+    display: flex;
   }
   
   .jobimage {
@@ -44,7 +45,7 @@
     line-height: 150%;
   }
   
-  button {
+  .button1 {
     border: none;
     padding: 12px 24px;
     border-radius: 50px;
@@ -55,13 +56,29 @@
     display: block;
     cursor: pointer;
   }
+  .button2{
+    border: 1px solid black;
+    padding: 12px 50px;
+    font-weight: 600;
+    color: #0077ff;
+    background-color: #e0efff;
+    margin: 0 auto;
+    display: block;
+    cursor: pointer;
+
+  }
   
   .card__details {
     padding: 16px 8px 8px 8px;
   }
   
-  button:focus,
-  button:hover {
+  .button1:focus,
+  .button1:hover {
+    background-color: #0077ff;
+    color: #e0efff;
+  }
+  .button2:focus,
+  .button2:hover {
     background-color: #0077ff;
     color: #e0efff;
   }

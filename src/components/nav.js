@@ -48,7 +48,7 @@ const Navbar = () => {
                 <img src={"./assets/i1.jpeg"} className="logo" />
  
                 <NavMenu>
-                    <NavLink to="/jobs" >
+                    <NavLink to="/jobsview" >
                         Jobs
                     </NavLink>
                     <NavLink to="/events" activeStyle>
