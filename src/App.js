@@ -1,16 +1,18 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./css/App.css"
 import Navbar from './components/nav';
 import Home from "./pages/home";
-import Jobs from "./pages/jobs";
-import Events from "./pages/events";
-import Teams from "./pages/team";
-import Blogs from "./pages/b";
+import JobsSatus from "./pages/jobsStatus";
+import Filter from "./pages/filter";
+import Candidate from "./pages/candidateprofile";
+import Notif from "./pages/notif";
 import Main from './pages/b';
-import Register_care_taker from './pages/register_taker';
+import AllUsers from "./pages/AllUsers";
 import Jobp from "./pages/jobp"
 import Card from "./pages/card"
-import Job_details from "./pages/Job_details";
+import Jobdetails from "./pages/jobdetails";
+import Myprofile from "./pages/myprofile";
 
 function App() {
   return (
@@ -19,15 +21,20 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/jobs" element={<Jobs />} />
-        <Route path="/events" element={<Events />} />
-        <Route path="/register_taker" element={<Register_care_taker />} />
-        <Route path="/team" element={<Teams />} />
-        <Route path="/blogs" element={<Blogs />} />
+        <Route path= "/myprofile" element = {<Myprofile /> } />
+        <Route path="/jobstatus/:jobId" element={<JobsSatus />} />
+        <Route path="/users" element={<AllUsers />} />
+        <Route path="/profile/:ID" element={<Candidate />} />
+        <Route path="/notif" element={<Notif />} />
         <Route path="/main" element={<Main />} />
         <Route path="/jobsp" element={<Jobp />} />
-        <Route path="/jobsview" element={<Card />} />
-        <Route path="/jobsp/:jobId" element={<Job_details />} />
+        <Route path="/jobsview" element={
+        <div className="big-container">
+          <Filter />
+          <Card />
+          </div>} />
+        <Route path="/jobsdetails/:jobId" element={<Jobdetails />} />
+        
 
       </Routes>
     </Router>

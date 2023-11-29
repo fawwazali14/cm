@@ -1,0 +1,36 @@
+.homecard-container {
+    width: 60%;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    background-color: antiquewhite;
+    align-items: center;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-bottom: 3px solid black;
+    border-right: 3px solid black;
+}
+
+.profile-pic {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: contain;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.user-pic{
+    margin: auto;
+    height: 50px;
+}
+
+.home-username {
+    padding: 8px;
+
+}
+
+.home-bio {
+    padding: 16px;
+    text-align: justify;
+}

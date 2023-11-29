@@ -1,7 +1,34 @@
 import '../css/jobp.css';
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
+import { getUID } from "../firebase";
+import { sendDataToAPI } from '../functions/sendapi';
+import { useNavigate } from 'react-router-dom';
+
 
 function Jobp() {
+  const [uid, setUid] = useState(null);
+  const job_post_struct = {
+    table : "Job_Listings",
+    job_title: "",
+    description: "",
+    duration: "",
+    pay_per_hr: "",
+    location: "",
+    time_posted : "",
+    ID : ""
+
+  };
+  useEffect(() => {
+      getUID()
+        .then(uid => {
+          job_post_struct.ID = uid
+          console.log(uid)
+          setUid(uid);
+        })
+        .catch(error => {
+          console.error('Error fetching UID:', error);
+        });
+    }, []);
   const [formData, setFormData] = useState({
     jobTitle: '',
     description: '',
@@ -10,44 +37,27 @@ function Jobp() {
     location: '',
   });
 
-  const sendDataToAPI = async (dataToSend) => {
-    const url = 'http://127.0.0.1:5000/insert_data';
-
-    try {
-      const response = await fetch(url, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(dataToSend),
-      });
-
-      if (response.ok) {
-        console.log('Data sent successfully!');
-        // Handle success
-      } else {
-        console.error('Failed to send data:', response.statusText);
-        // Handle error
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      // Handle error
-    }
-  };
-
+  const navigate = useNavigate();
   const handleclick = (event) => {
+    console.log("haha")
 
-    const job_post_struct = {
-      table : "Job_Listings",
-      job_title: formData.jobTitle,
-      description: formData.description,
-      duration: formData.duration,
-      pay_per_hr: formData.payPerHr,
-      location: formData.location,
-      time_posted : new Date().toISOString(),
+    console.log(uid)
+    console.log("papa")
+  
+      job_post_struct.table = "Job_Listings";
+      job_post_struct.job_title=formData.jobTitle;
+      job_post_struct.description= formData.description;
+      job_post_struct.duration= formData.duration;
+      job_post_struct.pay_per_hr= formData.payPerHr;
+      job_post_struct.location=formData.location;
+      job_post_struct.time_posted =new Date().toISOString();
+      job_post_struct.ID = uid
 
-    };
+    
     sendDataToAPI(job_post_struct)
+    .then(()=>{
+        navigate("/")
+    })
 
 
   };

@@ -1,45 +1,48 @@
 import "../css/card.css";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { fetchData } from "../functions/getapi";
+import { getUID } from "../firebase";
 
 function Card() {
   const [data, setData] = useState([]);
   useEffect(() => {
-    fetchData();
+    getUID().then((data)=> {
+      const x = {
+        table: "Job_Listings",
+        ID : data
+      }
+      fetchData(x)
+      .then((data)=>{
+        console.log(data)
+        setData(data.jobs)
+  
+      })
+
+    })
+
+
+
+    
+    
   }, []);
 
   const navigate = useNavigate();
 
 
-  const fetchData = () => {
-    fetch("http://127.0.0.1:5000/fetch_data?table=Job_Listings")
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        console.log(data);
-        setData(data.jobs); // Update state with fetched data
-      })
-      .catch((error) => {
-        console.error("Error fetching data: ", error);
-      });
-  };
 
-  const handleSignInClick = () => {
-    navigate("/jobsp"); // Navigate to '/jobsview' when sign-in is successful
-  };
+
+  
   const handleReadMoreClick = (p) => {
     console.log(p)
     console.log(p.job_ID)
-    navigate(`/jobsp/${p.job_ID}`, { state: { jobData: p } }); 
+    navigate(`/jobsdetails/${p.job_ID}`, { state: { jobData: p } }); 
   };
 
 
   return (
     <div className="Card">
-      <button className="button2" onClick={handleSignInClick}>
-        Post A Job
-      </button>
+      
       <div id="container">
         {data && data.length > 0 ? (
           data.map((job) => (

@@ -1,0 +1,53 @@
+
+.notif-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+}
+.wrapper {
+  border-radius: 35px;
+  border: 1px solid black;
+  margin: 2rem;
+  padding: 0;
+  height: 200px;
+  width: 60%;
+  color: black;
+  font-family: "Roboto", sans-serif;
+  align-items: center;
+  justify-content: center;
+}
+.account {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap-reverse;
+}
+.notification {
+  margin: 0 2rem;
+}
+
+.notif-description {
+  border: none;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.notif-description h4 {
+  text-align: left;
+  padding: 20px;
+  /* padding: 1.5rem 1.2rem; */
+}
+
+.user {
+  border-radius: 10px;
+  border-radius: 0;
+  width: 85vh;
+  height: 33vh;
+  margin-bottom: 1.8rem;
+  background: white;
+  align-content: start;
+  display: flex;
+  justify-content: center;
+}

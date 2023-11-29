@@ -59,7 +59,7 @@ white-space: nowrap; */
 export const NavBtn = styled.nav`
 	display: flex;
 	align-items: center;
-	margin-right: 24px;
+	margin-right: 20px;
 	/* Third Nav */
 	/* justify-content: flex-end;
 width: 100vw; */
@@ -71,7 +71,7 @@ width: 100vw; */
 export const NavBtnLink = styled(Link)`
 	border-radius: 4px;
 	background: #151a1e;
-	padding: 10px 22px;
+	padding: 10px 17px;
 	color: #000000;
 	outline: none;
 	border: none;

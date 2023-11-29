@@ -37,3 +37,30 @@
     transform: rotate(360deg);
   }
 }
+
+.big-container {
+  display: inline-flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.filter {
+  font-size: 18px;
+}
+
+.Filter {
+  width: 40%;
+}
+
+.Card {
+  /* border: 2px solid black; */
+  padding: 16px;
+  margin: 8px;
+  flex: 1;
+}
+
+.minPay, .maxPay, .duration, .jobTitle {
+  height: 30px;
+  width: 100%;
+  display: flex;
+}

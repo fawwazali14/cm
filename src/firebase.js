@@ -21,6 +21,25 @@ const firebaseConfig = {
   measurementId: "G-VHFZ2L5FYD"
 };
 
+export const getUID = () => {
+  return new Promise((resolve, reject) => {
+    const unsubscribe = auth.onAuthStateChanged(user => {
+      if (user) {
+        // If user is signed in, resolve with UID
+        resolve(user.uid);
+      } else {
+        // If no user is signed in, resolve with null
+        resolve(null);
+      }
+      // Unsubscribe from auth state listener
+      unsubscribe();
+    }, error => {
+      // In case of an error, reject with the error message
+      reject(error);
+    });
+  });
+};
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
