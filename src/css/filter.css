@@ -38,7 +38,20 @@
     box-sizing: border-box;
 }
 
+.button-right {
+    margin-top: 50vh;
+    margin-left: 20vh;
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
 
+/* .button2 {
+    margin-right: 300px;
+    margin-top: 10vh;
+} */
 
 /* .duration {
     width: 300px;
